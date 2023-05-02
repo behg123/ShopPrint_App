@@ -19,8 +19,8 @@
     <!--Icone de carrinho de compras no topo da página-->
     <ContentPage.Content>
         <!--Bloco onde serão armazenadas as informalões sobre os itens-->
-        <StackLayout HorizontalOptions="Center" Margin="0,30,0,0">
-            <Frame BackgroundColor="#D88B19">
+        <StackLayout HorizontalOptions="Center" Margin="0,30,0,0" VerticalOptions="Start"> 
+            <Frame BackgroundColor="#D88B19" VerticalOptions="Start" WidthRequest="300">
                 <StackLayout>
                     <!--Imagem do item-->
                     <Image x:Name="ImagemDetail" WidthRequest="300" HeightRequest="300" Margin="0,-40,0,0" />
