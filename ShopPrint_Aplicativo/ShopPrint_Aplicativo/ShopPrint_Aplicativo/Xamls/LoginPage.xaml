@@ -25,9 +25,9 @@
             <!--Bloco Onde será estarão as informações de login-->
             <StackLayout Padding="27">
                 <!--Input do usuário: Username-->
-                <Entry x:Name="txtUsername" Placeholder="Username" />
+                <Entry x:Name="txtUsername" Placeholder="Username" Margin="0,10"/>
                 <!--Input do usuário: Senha-->
-                <Entry x:Name="txtPassword" Placeholder="Password" IsPassword="True" />
+                <Entry x:Name="txtPassword" Placeholder="Password" IsPassword="True" Margin="0,10"/>
                 <!--Botão de login-->
                 <Button Text="Login" TextColor="White" BackgroundColor="#d88b19" Clicked="Button_Clicked" />
 

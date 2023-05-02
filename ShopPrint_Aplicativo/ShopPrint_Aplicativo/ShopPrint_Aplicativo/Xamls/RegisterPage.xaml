@@ -20,12 +20,18 @@
             <!--Bloco Onde será estarão as informações de Registro-->            
             <StackLayout Padding="27">
                 <!--Input do usuário: Username-->
-                <Entry x:Name="txtUsername" Placeholder="Username" />
+                <Entry x:Name="txtUsername" Placeholder="Username" Margin="0,10" />
+                <!--Input do usuário: Email-->
+                <Entry x:Name="txtEmail" Placeholder="Email" Margin="0,10"/>
+                <!--Input do usuário: Telefone-->
+                <Entry x:Name="txtTelefone" Placeholder="Telefone" Margin="0,10"/>
                 <!--Input do usuário: Senha-->
-                <Entry x:Name="txtPassword" Placeholder="Senha" IsPassword="True" />
+                <Entry x:Name="txtPassword" Placeholder="Senha" IsPassword="True" Margin="0,10" />
                 <!--Input do usuário: Repetir a senha-->
-                <Entry x:Name="txtRepeatPassword" Placeholder="Repita sua Senha" IsPassword="True" />
+                <Entry x:Name="txtRepeatPassword" Placeholder="Repita sua Senha" IsPassword="True" Margin="0,10" />
+                
                 <!--Botão de Registro-->
+
                 <Button Text="Registrar-se" TextColor="White" BackgroundColor="#d88b19" Clicked="Button_Clicked" />
             </StackLayout>
             <!--Botão caso o usuário já tenha uma conta-->

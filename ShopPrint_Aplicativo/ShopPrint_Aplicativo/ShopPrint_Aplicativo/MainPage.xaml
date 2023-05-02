@@ -8,24 +8,27 @@
               >
     <Shell.FlyoutHeaderTemplate>
         <DataTemplate>
-            <Grid BackgroundColor="Black"
+            <Grid BackgroundColor="#d88b19"
                   HeightRequest="200">
                 <Image Aspect="AspectFill"
-                       Source="Flyout_Image.jpg"
-                       />
-                
+                       Source="logoinversa.jpg"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand"
+                       WidthRequest="120"
+                />
             </Grid>
         </DataTemplate>
     </Shell.FlyoutHeaderTemplate>
     
-    <FlyoutItem Title="MyTabApp"
-                Shell.TabBarIsVisible="False"
+    <FlyoutItem Title="MyTabApp" Shell.TabBarIsVisible="False"
                 FlyoutDisplayOptions="AsMultipleItems"
                 >
-        <ShellContent Title="Home" Icon="ic_action_home.png" IsTabStop="True" ContentTemplate="{DataTemplate local:HomePage}"></ShellContent>
-        <ShellContent Title="Login" Icon="ic_action_login.png" IsTabStop="True" ContentTemplate="{DataTemplate local:LoginPage}"></ShellContent>
-        <ShellContent Title="Register" Icon="ic_action_app_registration" IsTabStop="True" ContentTemplate="{DataTemplate local:RegisterPage}"></ShellContent>
-        <ShellContent Title="Sobre Nós" Icon="grupo.png" IsTabStop="True" ContentTemplate="{DataTemplate local:AboutusPage}"></ShellContent>
+        <ShellContent Title="Home" Icon="ic_action_home.png" IsTabStop="True" ContentTemplate="{DataTemplate local:HomePage}"/>
+        <ShellContent Title="Login" Icon="ic_action_login.png" IsTabStop="True" ContentTemplate="{DataTemplate local:LoginPage}"/>
+        <ShellContent Title="Registrar-se" Icon="ic_action_app_registration" IsTabStop="True" ContentTemplate="{DataTemplate local:RegisterPage}"/>
+        <ShellContent Title="Editar sua Conta" Icon="ic_action_edit" IsTabStop="True" ContentTemplate="{DataTemplate local:EditAccountPage}"/>
+
+        <ShellContent Title="Sobre Nós" Icon="grupo.png" IsTabStop="True" ContentTemplate="{DataTemplate local:AboutusPage}"/>
 
     </FlyoutItem>
 

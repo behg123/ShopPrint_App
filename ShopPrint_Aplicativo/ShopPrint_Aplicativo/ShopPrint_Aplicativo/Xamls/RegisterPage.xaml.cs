@@ -19,7 +19,7 @@ namespace ShopPrint_Aplicativo
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            if (txtPassword.Text == null || txtRepeatPassword.Text == null || txtUsername.Text == null)
+            if (txtPassword.Text == null || txtRepeatPassword.Text == null || txtUsername.Text == null || txtEmail == null || txtTelefone == null)
             {
                 DisplayAlert("Tente Novamente", "Campos vazios", "OK");
 
