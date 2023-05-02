@@ -1,5 +1,6 @@
 ﻿using ShopPrint_Aplicativo.Classes;
 using ShopPrint_Aplicativo.Listas;
+using ShopPrint_Aplicativo.Xamls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,11 @@ namespace ShopPrint_Aplicativo
             var button = (ImageButton)sender;
             var item = (Cart)button.BindingContext;
             CartList.CartItemList.Remove(item);
+        }
+
+        private async void Checkout(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CheckoutPage());
         }
     }
 }

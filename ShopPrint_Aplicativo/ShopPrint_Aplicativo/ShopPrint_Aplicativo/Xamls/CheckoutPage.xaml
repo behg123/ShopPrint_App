@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShopPrint_Aplicativo.Xamls.CheckoutPage">
+
+    <Shell.TitleView>
+        <StackLayout>
+            <Label Text="Checkout" TextColor="White" FontSize="20" VerticalOptions="CenterAndExpand" FontAttributes="Bold" />
+        </StackLayout>
+    </Shell.TitleView>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding="27">
+                <Label  Text="Endereço"
+                    FontSize="28"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    />
+
+                <Label Text="Cep"
+                           FontAttributes="Bold"
+                           FontSize="24"
+                           Margin="0,10,0,0"/>
+                <Frame CornerRadius="10" BorderColor="Black" HeightRequest="40">
+                    <Entry VerticalOptions="EndAndExpand"/>
+                </Frame>
+
+                <Label Text="Cidade"
+                           FontAttributes="Bold"
+                           FontSize="24"
+                           Margin="0,10,0,0"/>
+                <Frame CornerRadius="10" BorderColor="Black" HeightRequest="40">
+                    <Entry VerticalOptions="EndAndExpand"/>
+                </Frame>
+
+                <Label Text="Rua"
+                           FontAttributes="Bold"
+                           FontSize="24"
+                           Margin="0,10,0,0"/>
+                <Frame CornerRadius="10" BorderColor="Black" HeightRequest="40">
+                    <Entry VerticalOptions="EndAndExpand"/> 
+                </Frame>
+
+                <Label Text="Estado"
+                           FontAttributes="Bold"
+                           FontSize="24"
+                           Margin="0,10,0,0"/>
+                <Frame CornerRadius="10" BorderColor="Black" HorizontalOptions="Start">
+                    <Entry WidthRequest="100" HorizontalOptions="Start" HeightRequest="40"/>
+                </Frame>
+                <Label Text="Número"
+                           FontAttributes="Bold"
+                           FontSize="24"
+                           Margin="0,-130,50,0"
+                            HorizontalOptions="End"/>
+                <Frame CornerRadius="10" BorderColor="Black" HorizontalOptions="End">
+                    <Entry WidthRequest="100" HorizontalOptions="End"/>
+                </Frame>
+
+            </StackLayout>
+            <Button Clicked="OnClickButton" Text="Forma de pagamento" BackgroundColor="#d88b19" VerticalOptions="EndAndExpand"></Button>
+        </StackLayout>
+
+
+
+    </ContentPage.Content>
+</ContentPage>

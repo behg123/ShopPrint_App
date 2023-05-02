@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ShopPrint_Aplicativo.MainPage"
-             xmlns:local="clr-namespace:ShopPrint_Aplicativo"
-             BackgroundColor="#D88B19"
-             >
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              x:Class="ShopPrint_Aplicativo.MainPage"
+              xmlns:local="clr-namespace:ShopPrint_Aplicativo"
+              BackgroundColor="#D88B19"
+              >
     <Shell.FlyoutHeaderTemplate>
         <DataTemplate>
             <Grid BackgroundColor="Black"
@@ -14,11 +14,6 @@
                        Source="Flyout_Image.jpg"
                        />
                 
-                <Label Text="ShopPrint"
-                       TextColor="White"
-                       FontAttributes="Bold"
-                       HorizontalTextAlignment="Center"
-                       VerticalTextAlignment="Center" />
             </Grid>
         </DataTemplate>
     </Shell.FlyoutHeaderTemplate>
@@ -30,6 +25,7 @@
         <ShellContent Title="Home" Icon="ic_action_home.png" IsTabStop="True" ContentTemplate="{DataTemplate local:HomePage}"></ShellContent>
         <ShellContent Title="Login" Icon="ic_action_login.png" IsTabStop="True" ContentTemplate="{DataTemplate local:LoginPage}"></ShellContent>
         <ShellContent Title="Register" Icon="ic_action_app_registration" IsTabStop="True" ContentTemplate="{DataTemplate local:RegisterPage}"></ShellContent>
+        <ShellContent Title="Sobre Nós" Icon="grupo.png" IsTabStop="True" ContentTemplate="{DataTemplate local:AboutusPage}"></ShellContent>
 
     </FlyoutItem>
 
@@ -37,11 +33,10 @@
                 Shell.TabBarIsVisible="False"
                 FlyoutDisplayOptions="AsMultipleItems"
                 >
-        <ShellContent Title="Utilitários" Icon="ic_action_home.png" IsTabStop="True" ContentTemplate="{DataTemplate local:ProductPage}"></ShellContent>
-        <ShellContent Title="Peças" Icon="ic_action_login.png" IsTabStop="True" ContentTemplate="{DataTemplate local:ProductPage}"></ShellContent>
-        <ShellContent Title="Brinquedos" Icon="ic_action_app_registration" IsTabStop="True" ContentTemplate="{DataTemplate local:ProductPage}"></ShellContent>
+        <ShellContent Title="Utilitários" Icon="servicos_de_utilidade_publica.png" IsTabStop="True" ContentTemplate="{DataTemplate local:ProductPage}"></ShellContent>
+        <ShellContent Title="Peças" Icon="noz.png" IsTabStop="True" ContentTemplate="{DataTemplate local:ProductPage}"></ShellContent>
+        <ShellContent Title="Brinquedos" Icon="blocos_de_brinquedo" IsTabStop="True" ContentTemplate="{DataTemplate local:ProductPage}"></ShellContent>
 
     </FlyoutItem>
-
 
 </Shell>

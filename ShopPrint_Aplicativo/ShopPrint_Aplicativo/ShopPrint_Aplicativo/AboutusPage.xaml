@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShopPrint_Aplicativo.AboutusPage">
+
+    <!--Logo da ShopPrint no topo da página-->
+    <Shell.TitleView>
+        <StackLayout>
+            <Label Text="Sobre Nós" TextColor="White" FontSize="20" VerticalOptions="CenterAndExpand" FontAttributes="Bold" />
+        </StackLayout>
+    </Shell.TitleView>
+
+    <!--Icone de carrinho de compras no topo da página-->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Example Item" IconImageSource="carrinhodecompras.png" Order="Primary" Priority="0"
+            Clicked="CartClicked" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Image Source="Logo.png" HorizontalOptions="Center" VerticalOptions="Center"
+                        HeightRequest="150" WidthRequest="200" Margin="20" />
+            <Frame Background="#d88b19" CornerRadius="10">
+                <StackLayout>
+                    <Label FontSize="24" FontAttributes="Bold" TextColor="White" Margin="20,0" Text="Quem somos nós"/>
+                    <Label FontSize="Body" FontAttributes="Bold" TextColor="White" Margin="20,0" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan laoreet magna vitae elementum. Duis semper ex pellentesque nibh ullamcorper lacinia. Suspendisse sed diam magna.Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In id maximus turpis, mattis commodo mauris. Sed bibendum accumsan leo. Nulla placerat. "/>
+                </StackLayout>
+            </Frame>
+            <Frame Background="#d88b19" CornerRadius="10">
+                <StackLayout>
+                    <Label FontSize="24" FontAttributes="Bold" TextColor="white" Margin="20,0" Text="Qual nossa missão"/>
+                    <Label FontSize="Body" FontAttributes="Bold" TextColor="White" Margin="20,0" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan laoreet magna vitae elementum. Duis semper ex pellentesque nibh ullamcorper lacinia. Suspendisse sed diam magna."/>
+
+                </StackLayout>
+
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShopPrint_Aplicativo.PaymentPage"
+             xmlns:local="clr-namespace:ShopPrint_Aplicativo">
+    <!--Logo da ShopPrint no topo da página-->
+    <Shell.TitleView>
+        <StackLayout>
+            <Image Source="LogoInversa.png" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="50"
+                HeightRequest="50" />
+
+            <SearchBar Placeholder="Search items..." />
+        </StackLayout>
+    </Shell.TitleView>
+
+    <!--Icone de carrinho de compras no topo da página-->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Example Item" IconImageSource="carrinhodecompras.png" Order="Primary" Priority="0"
+            Clicked="CartClicked" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Escolha sua forma de pagamento"
+                    Margin="20"
+                   TextColor="Black"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                HorizontalOptions="CenterAndExpand" />
+
+            <StackLayout Padding="27">
+                <Label Text="PIX"
+                           FontAttributes="Bold"
+                           FontSize="20"
+                           Margin="0,10,0,0"/>
+
+                <ImageButton Source="grupo"/>
+
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

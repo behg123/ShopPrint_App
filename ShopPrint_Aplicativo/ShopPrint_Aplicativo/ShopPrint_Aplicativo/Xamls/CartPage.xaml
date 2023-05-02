@@ -63,6 +63,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Button Text="Checkout" Clicked="Checkout" BackgroundColor="#d88b19"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
