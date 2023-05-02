@@ -34,8 +34,26 @@
                            FontSize="20"
                            Margin="0,10,0,0"/>
 
-                <ImageButton Source="grupo"/>
+                <Frame BackgroundColor="white" BorderColor="Black">
+                    <ImageButton Source="logo_pix" Clicked="OnButtonClicked"/>
+                </Frame>
 
+
+                <Label Text="Crédito"
+                           FontAttributes="Bold"
+                           FontSize="20"
+                           Margin="0,10,0,0"/>
+                <Frame BackgroundColor="white" BorderColor="Black">
+                    <ImageButton Source="Logo_Cards" Clicked="OnButtonClicked"/>
+                </Frame>
+
+                <Label Text="Débito"
+                           FontAttributes="Bold"
+                           FontSize="20"
+                           Margin="0,10,0,0"/>
+                <Frame BackgroundColor="white" BorderColor="Black">
+                    <ImageButton Source="Logo_Cards" Clicked="OnButtonClicked"/>
+                </Frame>
 
             </StackLayout>
 

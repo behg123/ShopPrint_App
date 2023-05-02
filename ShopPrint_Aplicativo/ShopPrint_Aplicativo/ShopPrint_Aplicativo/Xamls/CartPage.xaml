@@ -40,6 +40,7 @@
                                         <!--Titulo do item-->
                                         <Label Grid.Column="1" Text="{Binding Title}" FontSize="12"
                                             FontAttributes="Bold" VerticalOptions="Center" TextColor="Black" />
+
                                         <!--Botão de remover Item-->
                                         <Button Text="-" Grid.Column="2" HorizontalOptions="CenterAndExpand"
                                             VerticalOptions="CenterAndExpand" WidthRequest="40" HeightRequest="40"
@@ -53,9 +54,19 @@
                                             VerticalOptions="CenterAndExpand" WidthRequest="40" HeightRequest="40"
                                             Clicked="AddQuantity" />
                                         <!--Botão de Remover Item-->
+                                        <Label Grid.Column="4" TextColor="Black" VerticalOptions="Center">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="R$"/>
+                                                    <Span Text="{Binding Price}" />
+                                                    <Span Text=",00"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
                                         <ImageButton Grid.Column="4" Source="ic_action_delete"
-                                            HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
-                                            WidthRequest="50" HeightRequest="50" Clicked="DeleteQuantity" />
+                                            HorizontalOptions="Center" VerticalOptions="EndAndExpand" Margin="30,0,-20,-20"
+                                            WidthRequest="30" HeightRequest="40" Clicked="DeleteQuantity" />
                                     </Grid>
                                 </Frame>
                             </Grid>
@@ -63,7 +74,22 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button Text="Checkout" Clicked="Checkout" BackgroundColor="#d88b19"/>
+
+            <Frame VerticalOptions="EndAndExpand" BorderColor="#d88b19">
+
+                <Label TextColor="Black" FontSize="16" HorizontalOptions="CenterAndExpand">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Total = R$"/>
+                            <Span x:Name="Preco"/>
+                            <Span Text=",00"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </Frame>
+                
+
+                <Button Text="Checkout" Clicked="Checkout" BackgroundColor="#d88b19"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

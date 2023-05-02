@@ -59,6 +59,7 @@
                 </Frame>
 
             </StackLayout>
+            
             <Button Clicked="OnClickButton" Text="Forma de pagamento" BackgroundColor="#d88b19" VerticalOptions="EndAndExpand"></Button>
         </StackLayout>
 

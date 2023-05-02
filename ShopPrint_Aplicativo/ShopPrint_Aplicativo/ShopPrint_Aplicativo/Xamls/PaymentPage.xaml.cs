@@ -20,5 +20,9 @@ namespace ShopPrint_Aplicativo
         {
             await Navigation.PushAsync(new CartPage());
         }
+
+        public void OnButtonClicked(object sender, EventArgs args) {
+            DisplayAlert("Desculpe", "Essa funcionalidade ainda não foi implementada", "OK");
+        }
     }
 }

@@ -19,6 +19,12 @@ namespace ShopPrint_Aplicativo
         {
             InitializeComponent();
             BindingContext = CartList.CartItemList;
+            int Price = 0;
+            foreach(Cart Item in CartList.CartItemList)
+            {
+                Price += Item.Price;
+            }
+            Preco.Text = Price.ToString();
         }
 
         private void AddQuantity(object sender, EventArgs e)
