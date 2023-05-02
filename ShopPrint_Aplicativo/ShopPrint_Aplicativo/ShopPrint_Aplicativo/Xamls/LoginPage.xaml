@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ShopPrint_Aplicativo.LoginPage">
+
+    <!--Começo da página-->
+    <ContentPage.Content>
+        <StackLayout>
+            <!--Parte onde é mostrada a logo e o Titulo da guia-->
+            <Frame BackgroundColor="#D88B19" WidthRequest="400" HeightRequest="200" VerticalOptions="Center"
+                HorizontalOptions="Center">
+                <StackLayout>
+                    <!--Logo da empresa-->
+                    <Image Source="LogoInversa.png" HorizontalOptions="Center" VerticalOptions="Center"
+                        HeightRequest="150" WidthRequest="200" />
+                    <!--Titulo da guia-->
+                    <Label Text="Login" Margin="10, 0, 0, 0" HorizontalOptions="Center" VerticalOptions="Center"
+                        FontSize="30" FontAttributes="Bold" TextColor="White" />
+                </StackLayout>
+            </Frame>
+
+            <!--Mensagem de boas vindas-->
+            <Label Text="Bem vindo de volta!" Margin="30, 10, 0, -20" FontSize="30" FontAttributes="bold"
+                TextColor="#d88b19" />
+
+            <!--Bloco Onde será estarão as informações de login-->
+            <StackLayout Padding="27">
+                <!--Input do usuário: Username-->
+                <Entry x:Name="txtUsername" Placeholder="Username" />
+                <!--Input do usuário: Senha-->
+                <Entry x:Name="txtPassword" Placeholder="Password" IsPassword="True" />
+                <!--Botão de login-->
+                <Button Text="Login" TextColor="White" BackgroundColor="#d88b19" Clicked="Button_Clicked" />
+
+                <!--Botão caso o usuário não tenha uma conta-->
+                <!--Ele será redireciodado a guia de registro-->
+                <Button Text="Não tem uma conta?" HorizontalOptions="Center" BackgroundColor="White"
+                    Clicked="Send_Register" />
+            </StackLayout>
+
+            <!--Botão caso o usuário tenha esquecido a senha-->
+            <Button Text="Esqueceu sua senha?" BackgroundColor="White" VerticalOptions="EndAndExpand"
+                HorizontalOptions="Center" FontSize="20" FontAttributes="bold" TextColor="#d88b19"
+                Margin="0, 0, 10, 0" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

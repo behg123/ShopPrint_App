@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ShopPrint_Aplicativo" xmlns:listas="clr-namespace:ShopPrint_Aplicativo.Listas"
+    x:Class="ShopPrint_Aplicativo.CartPage">
+
+    <!--Logo da ShopPrint no topo da página-->
+    <Shell.TitleView>
+        <StackLayout>
+            <Image Source="LogoInversa.png" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="50"
+                HeightRequest="50" />
+
+            <SearchBar Placeholder="Search items..." />
+        </StackLayout>
+    </Shell.TitleView>
+
+    <!--Começo da página-->
+    <ContentPage.Content>
+        <StackLayout>
+            <!--Template da aba onde ficarão os itens do carrinho-->
+            <ListView ItemsSource="{Binding Source={x:Static listas:CartList.CartItemList}}" HasUnevenRows="True"
+                SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <!--Informações de visualização-->
+                            <Grid Padding="20" RowSpacing="10" ColumnSpacing="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Frame WidthRequest="320" BackgroundColor="#d88b19">
+                                    <Grid ColumnSpacing="13">
+                                        <!--Imagem do item-->
+                                        <Image Source="{Binding Url}" HeightRequest="80" WidthRequest="80" Aspect="Fill"
+                                            VerticalOptions="Center" Grid.Column="0" />
+                                        <!--Titulo do item-->
+                                        <Label Grid.Column="1" Text="{Binding Title}" FontSize="12"
+                                            FontAttributes="Bold" VerticalOptions="Center" TextColor="Black" />
+                                        <!--Botão de remover Item-->
+                                        <Button Text="-" Grid.Column="2" HorizontalOptions="CenterAndExpand"
+                                            VerticalOptions="CenterAndExpand" WidthRequest="40" HeightRequest="40"
+                                            Clicked="RemoveQuantity" />
+                                        <!--Quantidade de itens-->
+                                        <Label Grid.Column="3" WidthRequest="10" FontAttributes="Bold" TextColor="White"
+                                            Text="{Binding Quantity}" VerticalOptions="CenterAndExpand"
+                                            HorizontalOptions="CenterAndExpand" Margin="-60,0,0,0" />
+                                        <!--Botão de adicionar Item-->
+                                        <Button Text="+" Grid.Column="3" HorizontalOptions="CenterAndExpand"
+                                            VerticalOptions="CenterAndExpand" WidthRequest="40" HeightRequest="40"
+                                            Clicked="AddQuantity" />
+                                        <!--Botão de Remover Item-->
+                                        <ImageButton Grid.Column="4" Source="ic_action_delete"
+                                            HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+                                            WidthRequest="50" HeightRequest="50" Clicked="DeleteQuantity" />
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

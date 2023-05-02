@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ShopPrint_Aplicativo" x:Class="ShopPrint_Aplicativo.ProductPage">
+
+    <!--Logo da ShopPrint no topo da página-->
+    <Shell.TitleView>
+        <StackLayout>
+            <Image Source="LogoInversa.png" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="50"
+                HeightRequest="50" />
+            <SearchBar Placeholder="Search items..." />
+        </StackLayout>
+    </Shell.TitleView>
+
+    <!--Icone de carrinho de compras no topo da página-->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Example Item" IconImageSource="carrinhodecompras.png" Order="Primary" Priority="0"
+            Clicked="CartClicked" />
+    </ContentPage.ToolbarItems>
+
+    <!--Começo da página-->
+    <ContentPage.Content>
+        <!--Template da lista que irá mostrar os produtos ao usuário-->
+        <ListView ItemsSource="{Binding ItemList}" HasUnevenRows="True" SeparatorVisibility="None"
+            ItemTapped="OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <!--Configurações de visualização-->
+                        <Grid Padding="10" RowSpacing="10" ColumnSpacing="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="430" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="370" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <!--Dados que serão mostrados ao usuário-->
+                            <StackLayout BackgroundColor="#D88b19">
+                                <!--Imagem do item-->
+                                <Image Source="{Binding Url}" HeightRequest="310" Aspect="AspectFill" WidthRequest="350"
+                                    HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
+                                <!--Titulo do item-->
+                                <Label Grid.Column="1" Text="{Binding Title}" Margin="10,0,0,10" FontSize="25"
+                                    FontAttributes="Bold" TextColor="Black" />
+                                <!--Preço do item-->
+                                <Label Grid.Column="1" Text="{Binding Price, StringFormat=\{0:C\}}" Margin="10,0,0,10"
+                                    FontSize="25" FontAttributes="Bold" TextColor="Black" />
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

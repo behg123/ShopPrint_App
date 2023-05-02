@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ShopPrint_Aplicativo.RegisterPage">
+
+    <!--Começo da página-->
+    <ContentPage.Content>
+        <StackLayout>
+            <!--Parte onde é mostrada a logo e o Titulo da guia-->
+            <Frame BackgroundColor="#D88B19" WidthRequest="400" HeightRequest="200" VerticalOptions="Center"
+                HorizontalOptions="Center">
+                <StackLayout>
+                    <Image Source="LogoInversa.png" HorizontalOptions="Center" VerticalOptions="Center"
+                        HeightRequest="150" WidthRequest="200" />
+
+                    <Label Text="Crie sua conta" Margin="0, 10, 0, 0" HorizontalOptions="Center"
+                        VerticalOptions="Center" FontSize="30" FontAttributes="Bold" TextColor="White" />
+                </StackLayout>
+            </Frame>
+
+            <!--Bloco Onde será estarão as informações de Registro-->            
+            <StackLayout Padding="27">
+                <!--Input do usuário: Username-->
+                <Entry x:Name="txtUsername" Placeholder="Username" />
+                <!--Input do usuário: Senha-->
+                <Entry x:Name="txtPassword" Placeholder="Senha" IsPassword="True" />
+                <!--Input do usuário: Repetir a senha-->
+                <Entry x:Name="txtRepeatPassword" Placeholder="Repita sua Senha" IsPassword="True" />
+                <!--Botão de Registro-->
+                <Button Text="Registrar-se" TextColor="White" BackgroundColor="#d88b19" Clicked="Button_Clicked" />
+            </StackLayout>
+            <!--Botão caso o usuário já tenha uma conta-->
+            <Button Text="Já possui uma conta?" BackgroundColor="White" VerticalOptions="EndAndExpand"
+                HorizontalOptions="Center" FontSize="20" FontAttributes="bold" TextColor="#d88b19"
+                Margin="0, 0, 10, 0" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ShopPrint_Aplicativo.Xamls.DetailPage">
+
+
+    <!--Descrição da página-->
+    <Shell.TitleView>
+        <StackLayout>
+            <Label Text="Descrição do produto" TextColor="Black" FontSize="20" VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </Shell.TitleView>
+
+    <!--Icone de carrinho de compras no topo da página-->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Example Item" IconImageSource="carrinhodecompras.png" Order="Primary" Priority="0"
+            Clicked="CartClicked" />
+    </ContentPage.ToolbarItems>
+
+    <!--Icone de carrinho de compras no topo da página-->
+    <ContentPage.Content>
+        <!--Bloco onde serão armazenadas as informalões sobre os itens-->
+        <StackLayout HorizontalOptions="Center" Margin="0,30,0,0">
+            <Frame BackgroundColor="#D88B19">
+                <StackLayout>
+                    <!--Imagem do item-->
+                    <Image x:Name="ImagemDetail" WidthRequest="300" HeightRequest="300" Margin="0,-40,0,0" />
+                    <!--Titulo do item-->
+                    <Label x:Name="TituloDetail" FontSize="30" FontAttributes="Bold" TextColor="Black"
+                        Margin="0,-40,0,0" />
+                    <!--Descrição do item-->
+                    <Label x:Name="DescricaoDetail" FontSize="16" FontAttributes="Bold" TextColor="Black" />
+                    <!--Preço do item-->
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="R$" FontAttributes="Bold" TextColor="Black" />
+                                <Span x:Name="PrecoDetail" FontAttributes="Bold" TextColor="Black" />
+                                <Span Text=",00" FontAttributes="Bold" TextColor="Black" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+            </Frame>
+            <!--Botão de adicionar ao carrinho-->
+            <Button BackgroundColor="#D88B19" Text="Adicionar ao Carrinho" Clicked="AddCart" Margin="0,20,0,0"></Button>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
