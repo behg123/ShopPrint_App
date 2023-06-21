@@ -20,7 +20,7 @@
     <!--Começo da página-->
     <ContentPage.Content>
         <!--Template da lista que irá mostrar os produtos ao usuário-->
-        <ListView ItemsSource="{Binding ItemList}" HasUnevenRows="True" SeparatorVisibility="None"
+        <ListView x:Name="ItemList" HasUnevenRows="True" SeparatorVisibility="None"
             ItemTapped="OnItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>

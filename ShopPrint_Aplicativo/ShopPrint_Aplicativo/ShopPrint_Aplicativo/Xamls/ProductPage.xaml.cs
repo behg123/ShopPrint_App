@@ -1,35 +1,58 @@
-﻿using ShopPrint_Aplicativo.Listas;
-using ShopPrint_Aplicativo.Xamls;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.XPath;
+using System.Net.Http;
+using Newtonsoft.Json;
+using ShopPrint_Aplicativo.Xamls;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace ShopPrint_Aplicativo
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ProductPage : ContentPage
+    public partial class ProductPage : ContentPage
     {
-		public ProductPage ()
-		{
-			InitializeComponent ();
-			BindingContext = new ListPage();
-		}
+        public ProductPage()
+        {
+            InitializeComponent();
+            LoadProducts();
+        }
 
-		private async void OnItemSelected(object sender, ItemTappedEventArgs e)
-		{
-			var details = e.Item as Products;
-			await Navigation.PushAsync(new DetailPage(details.Title, details.Url, details.Description, (details.Price).ToString()));
-		}
+        private async void LoadProducts()
+        {
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("https://179.172.246.251:7150/");
+
+                    HttpResponseMessage response = await client.GetAsync("Product/GetAll");
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string content = await response.Content.ReadAsStringAsync();
+                        List<Products> products = JsonConvert.DeserializeObject<List<Products>>(content);
+
+                        ItemList.ItemsSource = products;
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error", "Failed to retrieve products.", "OK");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", "An error occurred while loading products: " + ex.Message, "OK");
+            }
+        }
+
+        private async void OnItemSelected(object sender, ItemTappedEventArgs e)
+        {
+            var details = e.Item as Products;
+            await Navigation.PushAsync(new DetailPage(details.Id));
+        }
 
         private async void CartClicked(object sender, EventArgs args)
         {
             await Navigation.PushAsync(new CartPage());
         }
-
     }
 }
