@@ -17,8 +17,7 @@
     <ContentPage.Content>
         <StackLayout>
             <!--Template da aba onde ficarão os itens do carrinho-->
-            <ListView ItemsSource="{Binding Source={x:Static listas:CartList.CartItemList}}" HasUnevenRows="True"
-                SeparatorVisibility="None">
+            <ListView x:Name="cartListView" HasUnevenRows="True" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

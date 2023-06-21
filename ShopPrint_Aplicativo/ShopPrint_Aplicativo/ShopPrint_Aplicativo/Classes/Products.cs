@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ShopPrint_Aplicativo
 {
-    class Products
+    public class Products
     {
         public int Id { get; set; }
         public string Name { get; set; }
